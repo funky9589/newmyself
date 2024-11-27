@@ -17,9 +17,11 @@
   <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container">
       <!-- LOGO -->
-      <a class="navbar-brand" href="#">音樂幽浮的日文歌小天地</a>
+      <a class="navbar-brand d-flex align-items-center" href="web.html">
+      <img src="img/logo-removebg.png" alt="Logo" class="logo-img me-2"> <!-- LOGO 圖片 -->
+      <a class="navbar-brand" href="web.html">音樂幽浮的日文歌小天地</a>
 
-      <!-- 清單的按鈕（小螢幕用） -->
+      <!-- 清單的按鈕-->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -28,16 +30,16 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">私について<br><small>About Me</small></a>
+            <a class="nav-link" href="#">有關本站<br><small>About Web</small></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">動畫新聞<br><small>News</small></a>
+            <a class="nav-link" href="#">日音消息<br><small>News</small></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">演出者<br><small>Artists</small></a>
+            <a class="nav-link" href="#">歌手介紹<br><small>singer introduce</small></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">歌曲<br><small>Songs</small></a>
+            <a class="nav-link" href="#">本月推薦歌單<br><small>month</small></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">聯絡我<br><small>Contact Me</small></a>
@@ -46,25 +48,37 @@
       </div>
     </div>
   </nav>
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-sm-4">
-          <h3>每月推薦</h3>
-          <p><img src="img/本月聽什麼.png"  class="img-fluid"></p>
-          <p>每個月都為你帶來私心推薦</p>
-        </div>
-        <div class="col-sm-4">
-          <h3>歌手推薦</h3>
-          <p><img src="img/歌手介紹.png"  class="img-fluid"></p>
-          <p>你想知道的歌手故事，說不定在這裡都有</p>
-        </div>
-        <div class="col-sm-4">
-          <h3>本站介紹</h3>        
-          <p><img src="img/關於本站.png"  class="img-fluid"></p>
-          <p>如果你想要了解更多...</p>
-        </div>
+  <div class="container mt-5">
+    <div class="row">
+      <!-- 每月推薦 -->
+      <div class="col-sm-4 text-center">
+        <h3>每月推薦</h3>
+        <a href="monthly.html">
+          <img src="img/本月聽什麼.png" class="img-fluid" alt="每月推薦">
+        </a>
+        <p>每個月的精選歌單，不多但總有你喜歡的</p>
+      </div>
+  
+      <!-- 歌手推薦 -->
+      <div class="col-sm-4 text-center">
+        <h3>歌手推薦</h3>
+        <a href="singer.html">
+          <img src="img/歌手介紹.png" class="img-fluid" alt="歌手推薦">
+        </a>
+        <p>你想知道的歌手故事，說不定在這裡都有</p>
+      </div>
+  
+      <!-- 更多資訊 -->
+      <div class="col-sm-4 text-center">
+        <h3>更多資訊</h3>
+        <!-- 圖片連結 -->
+        <a href="info.html">
+          <img src="img/日音消息-removebg.png" class="img-fluid" alt="更多資訊">
+        </a>
+        <p>如果你想要了解更多...</p>
       </div>
     </div>
+  </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

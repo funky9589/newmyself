@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+
+.logo-img {
+    height: 40px; /* 調整 LOGO 高度 */
+    width: auto; 
+  }
+
+
 /* 表頭的樣式 */
 .navbar-custom {
     background-color: #8d6e72; /* 背景色 */
@@ -36,8 +44,10 @@
     margin-right: 15px;
   }
   
-body {
-    background-color: #fff1c1; 
+  body {
+    font-family: 'Noto Sans TC', Arial, sans-serif; /* 使用 Noto Sans TC 字型 */
+    color: #333; /* 預設文字顏色 */
+    background-color: #f9f9f9;
   }
 
 
@@ -45,9 +55,9 @@ body {
   /* Footer  */
 .footer-custom {
     background-color: #333; /* 深灰色背景 */
-    color: #fff; /* 白色文字 */
-    font-family: 'Arial', sans-serif; /* 更改字型*/
-    text-align: center; /* 置中文字 */
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
   }
   
   .footer-custom h3 {
