@@ -49,6 +49,19 @@
     color: #333; /* 預設文字顏色 */
     background-color: #f9f9f9;
   }
+  h3 {
+    font-weight: 700; /* 加粗 */
+    font-size: 2rem; /* 調整大小 */
+    color: #5a4a42;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-weight: 400; 
+    font-size: 1rem; /* 調整段落字體大小 */
+    color: #666; 
+    line-height: 1.8; /* 行間距 */
+  }
+  
 
 
 
@@ -63,9 +76,13 @@
   .footer-custom h3 {
     font-size: 1.5rem; /* 標題字體大小 */
     margin-bottom: 0.5rem; /* 與下方間距 */
+    color: #ffffff;
   }
   
   .footer-custom p {
     font-size: 1rem; /* 字體大小 */
     margin: 0.25rem 0; /* 垂直間距 */
+    color: #ffffff;
   }
+
+  
