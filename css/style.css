@@ -6,6 +6,15 @@
   }
 
 
+
+a img {
+  transition: opacity 0.3s ease; /* 平滑過渡效果 */
+}
+
+a img:hover {
+  opacity: 0.7; /* 滑鼠移過時透明度降低到 70% */
+}
+
 /* 表頭的樣式 */
 .navbar-custom {
     background-color: #8d6e72; /* 背景色 */
@@ -61,16 +70,38 @@
     color: #666; 
     line-height: 1.8; /* 行間距 */
   }
+
+  .main-content {
+    flex: 1; /* 讓主內容自動撐滿剩餘空間 */
+}
+
+
+.equal-height-container {
+  display: flex; /* 使用 Flexbox 將子容器併排 */
   
+}.equal-height {
+  flex: 1; /* 讓每個區塊等寬 */
+  display: flex;
+  flex-direction: column; /* 子項目垂直排列 */
+  justify-content: space-between; /* 均勻分配內容間的距離 */
+  align-items: stretch; /* 讓每個區塊等高 */
+}
+  
+  /* 這裡是Footer  */
 
-
-
-  /* Footer  */
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* 整個頁面高度佔滿視窗 */
+    display: flex;
+    flex-direction: column;
+}
 .footer-custom {
     background-color: #333; /* 深灰色背景 */
     color: #fff;
     font-family: 'Arial', sans-serif;
     text-align: center;
+    padding: 1rem 0;
   }
   
   .footer-custom h3 {
@@ -83,6 +114,10 @@
     font-size: 1rem; /* 字體大小 */
     margin: 0.25rem 0; /* 垂直間距 */
     color: #ffffff;
+  }
+
+  footer {
+    margin-bottom: auto;
   }
 
   
