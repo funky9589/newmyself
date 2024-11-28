@@ -78,7 +78,7 @@ a img:hover {
 
 .equal-height-container {
   display: flex; /* 使用 Flexbox 將子容器併排 */
-  
+  gap: 15px; 
 }.equal-height {
   flex: 1; /* 讓每個區塊等寬 */
   display: flex;
@@ -101,7 +101,9 @@ a img:hover {
     color: #fff;
     font-family: 'Arial', sans-serif;
     text-align: center;
-    padding: 1rem 0;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
   }
   
   .footer-custom h3 {
@@ -121,3 +123,10 @@ a img:hover {
   }
 
   
+/*這邊是本月推薦*/
+  .card-video-content {
+    width: 100%; /* 影片寬度填滿卡片 */
+    height: auto; /* 高度自動保持比例 */
+    display: block; /* 去除多餘的間距 */
+    border-radius: 8px; 
+  }
