@@ -72,7 +72,8 @@ a img:hover {
   }
 
   .main-content {
-    flex: 1; /* 讓主內容自動撐滿剩餘空間 */
+    width: 100%; /* 確保寬度佔滿 */
+  margin: 0 auto;
 }
 
 
@@ -97,13 +98,10 @@ a img:hover {
     flex-direction: column;
 }
 .footer-custom {
-    background-color: #333; /* 深灰色背景 */
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    padding: 20px 0;
-    position: relative;
-    bottom: 0;
+  background-color: #343a40; /* 深灰色背景 */
+  color: white;             /* 文字顏色白色 */
+  padding: 20px 0;          /* 上下內距 */
+  margin-top: 30px;         /* 與內容保持距離 */
   }
   
   .footer-custom h3 {
@@ -119,7 +117,13 @@ a img:hover {
   }
 
   footer {
-    margin-bottom: auto;
+    flex-shrink: 0; 
+    background-color: #343a40; /* 深色背景 */
+  color: #ffffff;           /* 白色文字 */
+  text-align: center;       /* 文字居中 */
+  padding: 20px 0;          /* 上下內距 */
+  width: 120%;              /* 寬度全頁 */
+  box-sizing: border-box;   /* 包含 padding 計算寬度 */
   }
 
   
