@@ -31,38 +31,74 @@
     </nav>
 
     <!-- 主內容 -->
-    <div class="main-content container mt-5">
-      <h1 class="text-center mb-4">歌手介紹</h1>
-
-      <div class="row">
-        <!-- 音樂播放器卡片 -->
-<div class="card mb-3">
-    <img src="videos/またね幻字幕.mp4" class="card-img-top" alt="歌手1圖片">
-    <div class="card-body">
-      <h5 class="card-title">星街すいせい</h5>
-      <p class="card-text">虛擬偶像歌手，擁有出色的唱功與音樂創作能力。</p>
-      <!-- 音樂播放器 -->
-      <audio id="audioPlayer1" controls>
-        <source src="videos/真夜中的真夜中新封面.mp4" type="audio/mpeg">
-        您的瀏覽器不支援音訊播放。
-      </audio>
-      <!-- 自訂按鈕 -->
-      <div class="mt-3">
-        <button class="btn btn-primary" onclick="playAudio('audioPlayer1')">播放</button>
-        <button class="btn btn-secondary" onclick="pauseAudio('audioPlayer1')">暫停</button>
-      </div>
-    </div>
-  </div>
-
-        <!-- 右側文字區 -->
-        <div class="col-md-6 text-section">
-          <h2>關於歌手</h2>
-          <p>這裡是關於歌手的詳細資訊描述區域。</p>
-          <p>您可以在這裡撰寫更深入的介紹，例如歌手的歷史、音樂風格、專輯資訊，以及其他有趣的事實。</p>
-          <p>如果需要更多幫助，請隨時聯繫我們！</p>
+    <div class="container-music">
+      <!-- 左側音樂播放器區 -->
+      <div class="music-section">
+        <h4>音樂列表</h4>
+        <h5></h5>
+        <div class="music-item">
+          <p>歌曲 1 - 星街すいせい</p>
+          <audio controls>
+            <source src="videos/真夜中的真夜中新封面.mp4" type="audio/mpeg">
+            您的瀏覽器不支援音訊播放。
+          </audio>
+          <a href="真夜中.html" class="btn btn-primary" target="_blank">查看更多</a>
+        </div>
+        <div class="music-item">
+          <p>歌曲 2 - Creepy Nuts</p>
+          <audio controls>
+            <source src="music/song2.mp3" type="audio/mpeg">
+            您的瀏覽器不支援音訊播放。
+          </audio>
+        </div>
+        <!-- 添加更多歌曲 -->
+        <div class="music-item">
+          <p>歌曲 3</p>
+          <audio controls>
+            <source src="music/song3.mp3" type="audio/mpeg">
+            您的瀏覽器不支援音訊播放。
+          </audio>
+        </div>
+        <div class="music-item">
+          <p>歌曲 4</p>
+          <audio controls>
+            <source src="music/song4.mp3" type="audio/mpeg">
+            您的瀏覽器不支援音訊播放。
+          </audio>
+        </div>
+        <div class="music-item">
+          <p>歌曲 5</p>
+          <audio controls>
+            <source src="music/song5.mp3" type="audio/mpeg">
+            您的瀏覽器不支援音訊播放。
+          </audio>
+        </div>
+        <div class="music-item">
+          <p>歌曲 6</p>
+          <audio controls>
+            <source src="music/song6.mp3" type="audio/mpeg">
+            您的瀏覽器不支援音訊播放。
+          </audio>
         </div>
       </div>
+    
+      <!-- 右側文本輸入區 -->
+      <div class="text-image-container">
+        <p class="text">ずっと真夜中でいいのに</p>
+        <img src="img/真夜中.jpeg" alt="圖片" />
+        <p>樂團名稱可分做三段<br>
+          ずっと   一直、永遠<br>
+          真夜中で 在深夜裡<br>
+          いいのに 這樣多好<br>
+          官方正式譯名為"永遠是深夜多好"<br>
+          樂團風格也如其名<br>
+          曲風含有大量的貝斯聲<br>
+          創造出整體風格較昏沉<br>
+          卻富有節奏的旋律</p>
+      </div>
+      </div>
     </div>
+    
 
     <!-- Footer -->
     <footer class="footer-custom text-white text-center container-fluid">

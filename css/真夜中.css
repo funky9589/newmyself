@@ -1,10 +1,7 @@
 /* 滾動區域樣式 */
 .scrollable-section {
-    max-height: 500px; /* 限制高度 */
-    overflow-y: auto; /* 垂直滾動 */
-    padding: 10px; /* 增加內距 */
-    background-color: #ffffff; /* 白色背景 */
-    border-radius: 8px;
+    max-height: 500px;
+    overflow-y: auto;
   }
   
   /* 文字區域樣式 */
@@ -12,17 +9,9 @@
     background-color: #f8f9fa;
     padding: 20px;
     border-radius: 8px;
-    height: auto;
   }
   
-  /* 卡片間距與效果 */
-  .card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* 表頭樣式 */
+  /* 表頭樣式 (如需自訂) */
   .navbar-custom {
     background-color: #343a40;
     color: white;
