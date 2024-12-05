@@ -167,5 +167,11 @@ a img:hover {
   .text-image-container {
     text-align: center; /* 選擇是否讓文字和圖片居中 */
   }
-
+  .text {
+    font-size: 2rem; /* 調整文字大小 */
+    color: black; /* 改變文字顏色 */
+  
+    text-align: center; /* 文字居中 */
+    margin-bottom: 10px; /* 調整文字與圖片的距離 */
+  }
   
