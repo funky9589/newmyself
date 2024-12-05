@@ -175,3 +175,9 @@ a img:hover {
     margin-bottom: 10px; /* 調整文字與圖片的距離 */
   }
   
+/*網站那邊圖片大小*/
+  .responsive-image {
+    width: 75%; /* 填滿父容器 */
+    max-width: 1200px; /* 設定最大寬度 */
+    height: auto; /* 保持比例 */
+  }
