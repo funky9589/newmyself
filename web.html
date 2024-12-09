@@ -6,113 +6,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css"href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <title>音樂幽浮</title>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
-  <!-- 表頭 -->
-  <nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="container">
-      <!-- LOGO -->
-      <a class="navbar-brand d-flex align-items-center" href="web.html">
-      <img src="img/logo-removebg.png" alt="Logo" class="logo-img me-2"> <!-- LOGO 圖片 -->
-      <a class="navbar-brand" href="web.html">音樂幽浮的日文歌小天地</a>
-      <!-- 清單的按鈕-->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    <!-- 表頭 -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <div class="container">
+        <!-- LOGO -->
+        <a class="navbar-brand d-flex align-items-center" href="web.html">
+          <img src="img/logo-removebg.png" alt="Logo" class="logo-img me-2">
+          音樂幽浮的日文歌小天地
+        </a>
+        <!-- 清單的按鈕 -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 清單 -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#">有關本站<br><small>About Web</small></a></li>
+            <li class="nav-item"><a class="nav-link" href="#">日音消息<br><small>News</small></a></li>
+            <li class="nav-item"><a class="nav-link" href="singer.html">歌手介紹<br><small>singer introduce</small></a></li>
+            <li class="nav-item"><a class="nav-link" href="monthly.html">本月推薦歌單<br><small>month</small></a></li>
+            <li class="nav-item"><a class="nav-link" href="#">聯絡我<br><small>Contact Me</small></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      </div>
+    
+      <!-- Carousel Content -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="d-flex flex-column align-items-center">
+            <h3>每月推薦</h3>
+            <a href="monthly.html">
+              <img src="img/本月聽什麼.png" class="img-fluid" alt="每月推薦">
+            </a>
+            <p>每個月的精選歌單，不多但總有你喜歡的</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex flex-column align-items-center">
+            <h3>歌手推薦</h3>
+            <a href="singer.html">
+              <img src="img/歌手介紹.png" class="img-fluid" alt="歌手推薦">
+            </a>
+            <p>你想知道的歌手故事，說不定在這裡都有</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex flex-column align-items-center">
+            <h3>更多資訊</h3>
+            <a href="info.html">
+              <img src="img/日音消息-removebg.png" class="img-fluid" alt="更多資訊">
+            </a>
+            <p>如果你想要了解更多...</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex flex-column align-items-center">
+            <h3>有關本站</h3>
+            <a href="about.html">
+              <img src="img/關於本站.png" class="img-fluid" alt="有關本站">
+            </a>
+            <p>這邊可能是自我介紹</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex flex-column align-items-center">
+            <h3>聯絡我們</h3>
+            <a href="contact.html">
+              <img src="img/聯絡我們-.png" class="img-fluid" alt="聯絡我們">
+            </a>
+            <p>如果有問題，歡迎聯繫我們！</p>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Left and right controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
       </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
 
-      <!-- 清單 -->
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">有關本站<br><small>About Web</small></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">日音消息<br><small>News</small></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="singer.html">歌手介紹<br><small>singer introduce</small></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="monthly.html">本月推薦歌單<br><small>month</small></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">聯絡我<br><small>Contact Me</small></a>
-          </li>
-        </ul>
+    <!-- Footer -->
+    <footer class="footer-custom text-white text-center container-fluid mt-5">
+      <div class="container py-4">
+        <h3>這裡是 Footer</h3>
+        <p>想到就會補</p>
+        <p>但是逮就補</p>
+        <p>Copyright © 2024 FUNKY</p>
       </div>
-    </div>
-  </nav>
-  <div class="main-content container mt-5">
-    <div class="row equal-height-container">
-      <!-- 每月推薦 -->
-      <div class="col-sm-4 text-center equal-height">
-        <h3>每月推薦</h3>
-        <a href="monthly.html">
-          <img src="img/本月聽什麼.png" class="img-fluid" alt="每月推薦">
-        </a>
-        <p>每個月的精選歌單，不多但總有你喜歡的</p>
-      </div>
-  
-      <!-- 歌手推薦 -->
-      <div class="col-sm-4 text-center equal-height">
-        <h3>歌手推薦</h3>
-        <a href="singer.html">
-          <img src="img/歌手介紹.png" class="img-fluid" alt="歌手推薦">
-        </a>
-        <p>你想知道的歌手故事，說不定在這裡都有</p>
-      </div>
-  
-      <!-- 更多資訊 -->
-      <div class="col-sm-4 text-center equal-height">
-        <h3>更多資訊</h3>
-        <!-- 圖片連結 -->
-        <a href="info.html">
-          <img src="img/日音消息-removebg.png" class="img-fluid" alt="更多資訊">
-        </a>
-        <p>如果你想要了解更多...</p>
-      </div>
-    </div>
-  </div>
-  <div class="main-content container mt-5 equal-height">
-    <div class="row">
-      <!-- 有關本站 -->
-      <div class="col-sm-6 text-center equal-height">
-        <h3></h3>
-        <a href="about.html">
-          <img src="img/關於本站.png" class="img-fluid" alt="有關本站">
-        </a>
-        <p>這邊可能是自我介紹</p>
-      </div>
-  
-      <!-- 聯絡我們 -->
-      <div class="col-sm-6 d-flex text-center equal-height">
-        <h3></h3>
-        <a href="contact.html">
-          <img src="img/聯絡我們-.png" class="img-fluid" alt="聯絡我們">
-        </a>
-        <p>如果有問題，歡迎聯繫我們！</p>
-      </div>
-    
-    </div>
-  </div>
-    <!-- Optional JavaScript; choose one of the two! -->
+    </footer>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="js/poopr.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    
   </body>
-  <footer class="footer-custom text-white text-center container-fluid">
-    <div class="container py-4">
-      <h3>這裡是 Footer</h3>
-      <p>想到就會補</p>
-      <p>但是逮就補</p>
-      <p>Copyright © 2024 FUNKY</p>
-    </div>
-  </footer>
 </html>

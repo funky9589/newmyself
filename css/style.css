@@ -5,8 +5,6 @@
     width: auto; 
   }
 
-
-
 a img {
   transition: opacity 0.3s ease; /* 平滑過渡效果 */
 }
@@ -39,7 +37,7 @@ a img:hover {
   }
   
   .navbar-custom .nav-link small {
-    font-size: 0.75rem; /* 子標題文字大小 */
+    font-size: 0.75rem; /* 標題文字大小 */
   }
   
   .navbar-custom .nav-link:hover {
@@ -52,6 +50,8 @@ a img:hover {
     margin-left: 15px;
     margin-right: 15px;
   }
+
+  
   
   body {
     font-family: 'Noto Sans TC', Arial, sans-serif; /* 使用 Noto Sans TC 字型 */
@@ -63,6 +63,7 @@ a img:hover {
     font-size: 2rem; /* 調整大小 */
     color: #5a4a42;
     margin-bottom: 1rem;
+    margin-top: 30px;/* 調整間距 */
   }
   p {
     font-weight: 400; 
@@ -74,6 +75,23 @@ a img:hover {
   .main-content {
     width: 100%; /* 確保寬度佔滿 */
   margin: 0 auto;
+}
+
+/*carousel的東東*/
+.carousel-item img {
+  max-width: 100%; /* 確保圖片不會超出容器寬度 */
+  height: auto; /* 保持比例 */
+  margin-bottom: 15px; /* 增加圖片與文字的距離 */
+}
+
+.carousel-item p {
+  margin-top: 10px; /* 增加段落與圖片的距離 */
+  text-align: center; /* 段落文字居中 */
+  font-size: 1rem; /* 字體大小 */
+}
+
+.carousel-item > div {
+  margin-bottom: 40px; /* 增加下方間距 */
 }
 
 
