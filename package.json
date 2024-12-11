@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "git": "^0.1.5",
-    "lfs": "^0.0.4"
+    "lfs": "^0.0.4",
+    "nedb-promises": "^6.2.3"
   }
 }
