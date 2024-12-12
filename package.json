@@ -1,7 +1,20 @@
 {
   "dependencies": {
+    "express": "^4.21.2",
     "git": "^0.1.5",
     "lfs": "^0.0.4",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.11.5",
     "nedb-promises": "^6.2.3"
-  }
+  },
+  "name": "newmyself",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
