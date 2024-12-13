@@ -1,24 +1,27 @@
-const http = require("http");
-const fs = require("fs"); // 引入 fs 模組來讀取檔案
+const express = require('express');
+const path = require('path');
+const app = express();
 
-const server = http.createServer((request, response) => {
-  // 讀取 web.html 檔案
-  fs.readFile("web.html", (err, data) => {
-    if (err) {
-      // 如果檔案讀取失敗，回傳錯誤訊息
-      response.writeHead(500, { "Content-Type": "text/plain" });
-      response.end("Server Error: Unable to load web.html");
-    } else {
-      // 如果檔案讀取成功，回傳內容
-      response.writeHead(200, { "Content-Type": "text/html" });
-      response.end(data);
-    }
-  });
+// 提供 public 資料夾裡的靜態檔案（例如 CSS, JS, 影像等）
+app.use(express.static(path.join(__dirname, 'public')));
+
+// 設置首頁路由，指向 public/html 資料夾中的 web.html
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'html', 'web.html'));
 });
 
-const port = 5500;
-const ip = "127.0.0.1";
+// 設置其他路由，指向 public/html 資料夾中的 monthly.html
+app.get("/monthly.html", (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'html', 'monthly.html'));
+});
 
-server.listen(port, ip, () => {
-  console.log(`Server is running at http://${ip}:${port}`);
+// 設置歌手介紹路由，指向 public/html 資料夾中的 singer.html
+app.get("/singer", (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'html', 'singer.html'));
+});
+
+// 啟動伺服器
+const port = 5500;
+app.listen(port, () => {
+    console.log(`Server is running at http://127.0.0.1:${port}`);
 });
