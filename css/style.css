@@ -27,6 +27,7 @@ a img:hover {
     color: #fff; /* LOGO 文字顏色 */
     font-size: 1.5rem; /* LOGO 字體大小 */
     font-weight: bold;
+    text-decoration: none;
   }
   
   .navbar-custom .navbar-brand:hover {
@@ -53,6 +54,7 @@ a img:hover {
   .navbar-nav .nav-item {
     margin-left: 15px;
     margin-right: 15px;
+    text-decoration: none;
   }
 
   
@@ -60,7 +62,7 @@ a img:hover {
   body {
     font-family: 'Noto Sans TC', Arial, sans-serif; /* 使用 Noto Sans TC 字型 */
     color: #333; /* 預設文字顏色 */
-    background-color: #f9f9f9;
+    background-color: #F5F5DC;
   }
   h3 {
     font-weight: 700; /* 加粗 */
@@ -81,34 +83,7 @@ a img:hover {
   margin: 0 auto;
 }
 
-/*carousel的東東*/
-.carousel-item img {
-  max-width: 100%; /* 確保圖片不會超出容器寬度 */
-  height: auto; /* 保持比例 */
-  margin-bottom: 15px; /* 增加圖片與文字的距離 */
-}
 
-.carousel-item p {
-  margin-top: 10px; /* 增加段落與圖片的距離 */
-  text-align: center; /* 段落文字居中 */
-  font-size: 1rem; /* 字體大小 */
-}
-
-.carousel-item > div {
-  margin-bottom: 40px; /* 增加下方間距 */
-}
-
-
-.equal-height-container {
-  display: flex; /* 使用 Flexbox 將子容器併排 */
-  gap: 15px; 
-}.equal-height {
-  flex: 1; /* 讓每個區塊等寬 */
-  display: flex;
-  flex-direction: column; /* 子項目垂直排列 */
-  justify-content: space-between; /* 均勻分配內容間的距離 */
-  align-items: stretch; /* 讓每個區塊等高 */
-}
   
   /* 這裡是Footer  */
 
@@ -203,3 +178,64 @@ a img:hover {
     max-width: 1200px; /* 設定最大寬度 */
     height: auto; /* 保持比例 */
   }
+   /*首頁的視差*/
+   .parallax-section {
+    background-size: cover; /* 背景填充整個區域 */
+    background-attachment: fixed; /* 開啟視差滾動效果 */
+    background-position: center; /* 背景居中 */
+    background-repeat: no-repeat; /* 禁止背景重複 */
+    padding: 100px 20px; /* 上下內邊距 */
+    color: white; /* 文字顏色 */
+    text-align: center; /* 文字居中 */
+    min-height: 500px;
+    margin: 30px;/* 兩側縮排 */
+    display: flex; /* Flexbox 排版 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    flex-direction: column; /* 垂直排列 */
+
+  }
+  .parallax-section h2 {
+    font-size: 2.5rem; /* 標題字體大小 */
+    color: #fff; /* 白色字體 */
+    margin-bottom: 20px; /* 與段落間的距離 */
+  }
+  .parallax-section p {
+    font-size: 1.2rem; /* 段落字體大小 */
+    color: #fff; /* 段落顏色 */
+    line-height: 1.8; /* 行距 */
+  }
+  
+  /* 第一欄位背景 */
+  .parallax-section-1 {
+    background-image: url('/img/logo.png'); /* 替換為第一欄背景圖片的路徑 */
+    background-position: top;
+  }
+  
+  /* 第二欄位背景 */
+  .parallax-section-2 {
+    background-image: url('/img/新的歌手介紹圖.png'); /* 替換為第二欄背景圖片的路徑 */
+  }
+  
+  /* 第三欄位背景 */
+  .parallax-section-3 {
+    background-image: url('/img/新的本月帶你聽.png'); /* 替換為第三欄背景圖片的路徑 */
+  }
+  
+  /* 第四欄位背景 */
+  .parallax-section-4 {
+    background-image: url('/img/舞台.jpg'); /* 替換為第四欄背景圖片的路徑 */
+  }
+  @media (max-width: 768px) {
+    .parallax-section h2 {
+      font-size: 2rem; /* 小螢幕標題字體 */
+    }
+    .parallax-section p {
+      font-size: 1rem; /* 小螢幕段落字體 */
+    }
+  }
+ 
+  
+
+
+
