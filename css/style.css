@@ -180,31 +180,48 @@ a img:hover {
   }
    /*首頁的視差*/
    .parallax-section {
-    background-size: cover; /* 背景填充整個區域 */
-    background-attachment: fixed; /* 開啟視差滾動效果 */
-    background-position: center; /* 背景居中 */
-    background-repeat: no-repeat; /* 禁止背景重複 */
-    padding: 100px 20px; /* 上下內邊距 */
-    color: white; /* 文字顏色 */
-    text-align: center; /* 文字居中 */
-    min-height: 500px;
-    margin: 30px;/* 兩側縮排 */
-    display: flex; /* Flexbox 排版 */
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
+    display: flex;
+    justify-content: flex-start; /* 水平靠左 */
+    align-items: flex-start; /* 垂直靠左 */
     flex-direction: column; /* 垂直排列 */
+    padding: 100px 20px;
+    margin: 30px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    min-height: 500px;
 
   }
   .parallax-section h2 {
-    font-size: 2.5rem; /* 標題字體大小 */
+    font-size: 5rem; /* 標題字體大小 */
     color: #fff; /* 白色字體 */
     margin-bottom: 20px; /* 與段落間的距離 */
+    text-align: left ; 
+    margin-left: 20px; /* 左側間距 */
   }
   .parallax-section p {
     font-size: 1.2rem; /* 段落字體大小 */
     color: #fff; /* 段落顏色 */
     line-height: 1.8; /* 行距 */
-  }
+    margin-left: 40px; /* 左側間距 */
+}
+.parallax-section .btn {
+  justify-content: center;
+  font-size: 3rem; /* 按鈕字體大小 */
+  padding: 10px 20px; /* 上下左右的內間距 */
+  background-color: rgba(255,255,2255,0.5); /* 按鈕背景顏色 */
+  color: white; /* 按鈕文字顏色 */
+  border: none; /* 去掉邊框 */
+  border-radius: 5px; /* 圓角按鈕 */
+  text-decoration: none; /* 去掉按鈕文字的下劃線 */
+  margin-left: 60px;
+}
+.parallax-section .btn:hover {
+  background-color: #808080; /* 滑鼠懸停時的背景顏色 */
+  color: #fff; /* 滑鼠懸停時的文字顏色 */
+}
   
   /* 第一欄位背景 */
   .parallax-section-1 {
