@@ -278,10 +278,12 @@ footer {
   font-size: 1.2rem; /* 文字大小 */
   line-height: 1.8; /* 行距 */
   color: #333; /* 文字顏色 */
+  text-align: left;
 }
 
 .about-content h2 {
-  font-size: 2rem; /* 標題大小 */
+  font-size: 3rem; /* 標題大小 */
   margin-bottom: 20px;
   color: #444;
+  text-align: center;
 }
