@@ -7,21 +7,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // 設置首頁路由，指向 public/html 資料夾中的 web.html
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'html', 'web.html'));
+    res.sendFile(path.join(__dirname, 'public', 'web.html'));
 });
 
 // 設置其他路由，指向 public/html 資料夾中的 monthly.html
 app.get("/monthly.html", (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'html', 'monthly.html'));
+    res.sendFile(path.join(__dirname, 'public', 'monthly.html'));
 });
 
 // 設置歌手介紹路由，指向 public/html 資料夾中的 singer.html
 app.get("/singer", (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'html', 'singer.html'));
+    res.sendFile(path.join(__dirname, 'public', 'singer.html'));
 });
 
 // 啟動伺服器
 const port = 5500;
 app.listen(port, () => {
-    console.log(`Server is running at http://127.0.0.1:${port}`);
+    console.log(`Server is running at http://localhost:${port}`);
 });
