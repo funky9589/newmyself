@@ -19,7 +19,7 @@ app.get("/monthly.html", (req, res) => {
 app.get("/singer", (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'singer.html'));
 });
-// 設置歌手介紹路由，指向 public/html 資料夾中的 singer.html
+// 設置歌手介紹路由，指向 public/html 資料夾中的 about.html
 app.get("/about", (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'about.html'));
 });
