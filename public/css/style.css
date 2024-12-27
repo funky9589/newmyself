@@ -287,3 +287,40 @@ footer {
   color: #444;
   text-align: center;
 }
+
+/* 新聞列表樣式 */
+.news-list {
+  border: none;
+}
+
+.news-list .list-group-item {
+  border: none;
+  border-bottom: 1px solid #dee2e6;
+  padding: 20px 15px;
+  transition: background-color 0.3s ease;
+}
+
+.news-list .list-group-item:hover {
+  background-color: #f8f9fa;
+}
+
+.news-thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.news-list h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.news-list .text-muted {
+  font-size: 0.9rem;
+}
+
+.news-list small {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
