@@ -25,7 +25,7 @@ app.use((req, res) => {
 });
 
 // 啟動伺服器
-const port = 4000;
+const port = 5500;
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });
