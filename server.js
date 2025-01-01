@@ -5,23 +5,23 @@ const app = express();
 // 提供 public 資料夾裡的靜態檔案（例如 CSS, JS, 影像等）
 app.use(express.static(path.join(__dirname, 'public')));
 
-// 設置首頁路由，指向 public 資料夾中的 web.html
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'web.html'));
+// 路由設置
+const routes = [
+    { path: "/", file: "web.html" },
+    { path: "/monthly.html", file: "html/monthly.html" },
+    { path: "/singer", file: "html/singer.html" },
+    { path: "/about", file: "html/about.html" },
+];
+
+routes.forEach(({ path: route, file }) => {
+    app.get(route, (req, res) => {
+        res.sendFile(path.join(__dirname, 'public', file));
+    });
 });
 
-// 設置其他路由，指向 public/html 資料夾中的 monthly.html
-app.get("/monthly.html", (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'monthly.html'));
-});
-
-// 設置歌手介紹路由，指向 public/html 資料夾中的 singer.html
-app.get("/singer", (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'singer.html'));
-});
-// 設置歌手介紹路由，指向 public/html 資料夾中的 about.html
-app.get("/about", (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'about.html'));
+// 404 錯誤頁面
+app.use((req, res) => {
+    res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
 });
 
 // 啟動伺服器
