@@ -239,11 +239,61 @@ footer {
 
 /* 響應式設計 */
 @media (max-width: 768px) {
+  /* 全局調整 */
+  body {
+    padding: 0 15px; /* 縮小頁面兩側的邊距 */
+  }
+
+  /* 標題與段落調整 */
   .parallax-section h2 {
-    font-size: 2rem; /* 小螢幕標題字體 */
+    font-size: 1.8rem; /* 縮小標題字體，適配小螢幕 */
+    margin-bottom: 15px; /* 增加標題與段落之間的空隙 */
+    text-align: center; /* 小螢幕標題居中 */
   }
   .parallax-section p {
-    font-size: 1rem; /* 小螢幕段落字體 */
+    font-size: 0.95rem; /* 縮小段落字體 */
+    line-height: 1.6; /* 增加行距，提升閱讀性 */
+    text-align: justify; /* 調整段落對齊 */
+  }
+
+  /* 圖片調整 */
+  .parallax-section img {
+    width: 100%; /* 圖片寬度自適應 */
+    height: auto; /* 保持圖片比例 */
+    margin-bottom: 20px; /* 圖片下方空隙 */
+  }
+
+  /* 佈局調整 */
+  .parallax-section {
+    display: flex;
+    flex-direction: column; /* 改為垂直排列 */
+    align-items: center; /* 內容水平居中 */
+    padding: 20px; /* 增加內邊距 */
+  }
+
+  /* 按鈕樣式 */
+  .btn {
+    font-size: 1rem; /* 確保按鈕字體在小螢幕上清晰可見 */
+    padding: 10px 20px; /* 增大按鈕點擊區域 */
+    margin-top: 10px; /* 與其他元素拉開距離 */
+  }
+
+  /* 卡片樣式 */
+  .news-card {
+    margin-bottom: 20px; /* 增加卡片間距 */
+  }
+  .news-card .card-title {
+    font-size: 1.1rem; /* 調整卡片標題字體大小 */
+    text-align: center; /* 標題居中 */
+  }
+  .news-card .card-text {
+    font-size: 0.9rem; /* 段落縮小但保持可讀性 */
+  }
+
+  /* 頁尾（Footer） */
+  .footer-custom {
+    font-size: 0.85rem; /* 減小字體大小 */
+    padding: 15px; /* 增加頁尾內邊距 */
   }
 }
 
