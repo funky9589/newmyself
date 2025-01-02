@@ -276,8 +276,10 @@ footer {
     font-size: 1rem; /* 確保按鈕字體在小螢幕上清晰可見 */
     padding: 10px 20px; /* 增大按鈕點擊區域 */
     margin-top: 10px; /* 與其他元素拉開距離 */
+    
   }
 
+  
   /* 卡片樣式 */
   .news-card {
     margin-bottom: 20px; /* 增加卡片間距 */

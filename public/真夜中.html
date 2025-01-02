@@ -1,68 +1,62 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>ずっと真夜中でいいのに</title>
-  </head>
-  <body class="d-flex flex-column">
-    <!-- 表頭 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>ずっと真夜中でいいのに</title>
+</head>
+<body class="d-flex flex-column">
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container">
-      <!-- LOGO -->
       <a class="navbar-brand d-flex align-items-center" href="web.html">
-      <img src="img/logo-removebg.png" alt="Logo" class="logo-img me-2"> <!-- LOGO 圖片 -->
-      <a class="navbar-brand" href="web.html">音樂幽浮的日文歌小天地</a>
-      <!-- 清單的按鈕-->
+        <img src="img/logo-removebg.png" alt="Logo" class="logo-img me-2">
+        音樂幽浮的日文歌小天地
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
-      <!-- 清單 -->
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="about.html">有關本站<br><small>About Web</small></a></li>
           <li class="nav-item"><a class="nav-link" href="news.html">日音消息<br><small>News</small></a></li>
           <li class="nav-item"><a class="nav-link" href="singer.html">歌手介紹<br><small>singer introduce</small></a></li>
           <li class="nav-item"><a class="nav-link" href="monthly.html">每月推薦歌單<br><small>month</small></a></li>
-          
         </ul>
       </div>
     </div>
   </nav>
 
-    <!-- 主內容 -->
-    <div class="container-music">
-      <!-- 左側音樂播放器區 -->
-      <div class="music-section">
-        <h4>推薦歌單</h4>
-        <h5></h5>
-        <div class="music-item">
+  <!-- Main Content -->
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Left Music Section -->
+      <div class="col-lg-6 col-md-12 mb-4">
+        <h4 class="mb-3">推薦歌單</h4>
+        <div class="music-item mb-3">
           <p>君がいて水になる<br>《有你，我才能化為水》</p>
           <audio controls>
             <source src="audio/君がいて水になる.mp3" type="audio/mpeg">
             您的瀏覽器不支援音訊播放。
           </audio>
-          
         </div>
-        <div class="music-item">
+        <div class="music-item mb-3">
           <p>蹴っ飛ばした毛布<br>《一腳踢開的毛毯》</p>
           <audio controls>
             <source src="audio/蹴っ飛ばした毛布.mp3" type="audio/mpeg">
             您的瀏覽器不支援音訊播放。
           </audio>
         </div>
-        <!-- 添加更多歌曲 -->
-        <div class="music-item">
+        <div class="music-item mb-3">
           <p>暗く黒く<br>《漆黑而幽暗》</p>
           <audio controls>
             <source src="audio/暗く黒く.mp3" type="audio/mpeg">
             您的瀏覽器不支援音訊播放。
           </audio>
         </div>
-        <div class="music-item">
+        <div class="music-item mb-3">
           <p>またね幻<br>《再會幻象》</p>
           <audio controls>
             <source src="audio/またね幻.mp3" type="audio/mpeg">
@@ -75,39 +69,38 @@
             <source src="audio/グラスとラムレーズン.mp3" type="audio/mpeg">
             您的瀏覽器不支援音訊播放。
           </audio>
-        
         </div>
       </div>
-    
-      <!-- 右側文本輸入區 -->
-      <div class="text-image-container">
+
+      <!-- Right Text & Image Section -->
+      <div class="col-lg-6 col-md-12 text-center">
+        <img src="img/真夜中.jpeg" alt="ずっと真夜中でいいのに" class="img-fluid mb-4">
         <p class="text">ずっと真夜中でいいのに</p>
-        <img src="img/真夜中.jpeg" alt="ずっと真夜中でいいのに" class="responsive-image" />
         <p>樂團名稱可分做三段<br>
-          ずっと   一直、永遠<br>
+          ずっと 一直、永遠<br>
           真夜中で 在深夜裡<br>
           いいのに 這樣多好<br>
           官方正式譯名為"永遠是深夜多好"<br>
           樂團風格也如其名<br>
           曲風含有大量的貝斯聲<br>
           創造出整體風格較昏沉<br>
-          卻富有節奏的旋律</p>
-          <a href="https://www.youtube.com/playlist?list=PL0GKCkSU2vniybFPlFhKe5otLYVLnVarD" class="btn btn-primary" target="_blank">查看更多</a>
-      </div>
+          卻富有節奏的旋律
+        </p>
+        <a href="https://www.youtube.com/playlist?list=PL0GKCkSU2vniybFPlFhKe5otLYVLnVarD" class="btn btn-primary" target="_blank">查看更多</a>
       </div>
     </div>
-    
+  </div>
 
-    <!-- Footer -->
-    <footer class="footer-custom text-white text-center container-fluid">
-      <div class="container py-4">
-        <h3>這裡是 Footer</h3>
-        <p>想到就會補</p>
-        <p>但是逮就補</p>
-        <p>Copyright © 2024 FUNKY</p>
-      </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="footer-custom text-white text-center mt-5 py-4">
+    <div class="container">
+      <h3>這裡是 Footer</h3>
+      <p>想到就會補</p>
+      <p>但是逮就補</p>
+      <p>Copyright © 2024 FUNKY</p>
+    </div>
+  </footer>
 
-    <script src="../js/bootstrap.bundle.min.js"></script>
-  </body>
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
