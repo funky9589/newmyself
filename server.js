@@ -29,7 +29,7 @@ app.post("/contact_me", (req, res) => {
       currentData = [];
     }
   }
-
+//處理Email及訊息
   if (req.body && req.body.email && req.body.message) {
     const newContact = {
       email: req.body.email,
@@ -41,7 +41,10 @@ app.post("/contact_me", (req, res) => {
     try {
       fs.writeFileSync(filePath, JSON.stringify(currentData, null, 2), "utf8");
       console.log("聯絡資訊已儲存:", newContact);
-      res.status(200).json({ message: "掐部掐掐死密達" });
+      res.status(200).json({ 
+        message: "欸恭喜終於成功！",
+        data: newContact 
+      });
     } catch (error) {
       console.error("寫入 contact_me.json 時發生錯誤:", error);
       res.status(500).json({ error: "伺服器錯誤，無法儲存資料。" });
@@ -66,7 +69,7 @@ routes.forEach(({ path: route, file }) => {
   });
 });
 
-// 404 處理
+// 404 的葉面處理
 app.use((req, res) => {
   res.status(404).sendFile(path.join(__dirname, "public", "404.html"));
 });
