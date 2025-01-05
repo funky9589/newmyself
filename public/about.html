@@ -60,58 +60,73 @@
         </a>
       </div>
       <div class="d-flex justify-content-center mt-4">
-        <form action="/contact_me" method="POST">
-          <input type="email" name="email" placeholder="請輸入電子郵件">
-          <textarea name="message" placeholder="請輸入訊息"></textarea>
+        <form id="contactForm">
+          <input id="email" type="email" name="email" placeholder="請輸入電子郵件" required>
+          <textarea id="message" name="message" placeholder="請輸入訊息" required></textarea>
           <button type="submit">提交</button>
         </form>
+        
+        <div id="feedbackMessage" class="centered-message"></div>
       </div>
-    </div>
     
     <script>
+      // 表單提交處理
       document.getElementById("contactForm").addEventListener("submit", function (event) {
-        event.preventDefault();
-        const email = document.getElementById("email").value;
-        const message = document.getElementById("message").value;
-        const submitButton = document.querySelector("button[type='submit']");
-        submitButton.disabled = true;
-    
-        fetch("contact_me", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, message }),
-        })
-          .then((response) => {
-            if (!response.ok) throw new Error("Network response was not ok " + response.statusText);
-            return response.json();
-          })
-          .then((data) => {
-            alert("提交成功：" + data.message);
-            document.getElementById("contactForm").reset();
-          })
-          .catch((error) => {
-            console.error("提交失敗：", error);
-            alert("提交失敗，請稍後再試。");
-          })
-          .finally(() => {
-            submitButton.disabled = false;
-          });
-      });
-      
-           fetch('/contact_me', {
-             method: 'POST',
-             headers: { 'Content-Type': 'application/json' },
-             body: JSON.stringify({ email: 'test@example.com', message: 'Hello!' })
-           })
-           .then(response => response.json())
-           .then(data => {
-             alert(`回應訊息: ${data.message}\n聯絡資訊:\nEmail: ${data.data.email}\n訊息: ${data.data.message}`);
-           })
-           .catch(error => console.error('錯誤:', error));
+  event.preventDefault(); // 阻止表單的預設提交行為
 
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+  const feedbackMessage = document.getElementById("feedbackMessage");
+  const submitButton = document.querySelector("button[type='submit']");
+
+  // 清空回饋訊息
+  feedbackMessage.innerHTML = "";
+  feedbackMessage.style.display = "none";
+  submitButton.disabled = true; // 禁用按鈕避免重複提交
+
+  fetch("/contact_me", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, message }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("伺服器回應失敗: " + response.statusText);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      // 顯示成功訊息
+      feedbackMessage.innerHTML = `
+        <div class="alert alert-success" role="alert">
+          提交成功！<br>
+          <strong>聯絡信箱：</strong> ${data.data.email}<br>
+          <strong>我們會盡快回復!!!</strong>
+        </div>`;
+      feedbackMessage.style.display = "block";
+      document.getElementById("contactForm").reset(); // 清空表單
+    })
+    .catch((error) => {
+      console.error("提交失敗：", error);
+      // 顯示失敗訊息
+      feedbackMessage.innerHTML = `
+        <div class="alert alert-danger" role="alert">
+          提交失敗，請稍後再試。
+        </div>`;
+      feedbackMessage.style.display = "block";
+    })
+    .finally(() => {
+      submitButton.disabled = false; // 恢復按鈕
+      
+      setTimeout(() => {
+        feedbackMessage.style.display = "none";
+      }, 2000);
+    });
+});
 
     </script>
     <!-- Footer -->
+    <div id="feedbackMessage" class="floating-message"></div>
     <footer class="footer-custom text-white text-center container-fluid mt-5">
       <div class="container py-4">
         <h3>這裡是 Footer</h3>

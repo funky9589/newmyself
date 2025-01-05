@@ -432,3 +432,23 @@ form button:hover {
 .mt-4 {
   margin-top: 20px;
 }
+
+.centered-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+  width: 90%; /* 適應小屏幕 */
+  z-index: 1000;
+  display: none; /* 初始隱藏 */
+  text-align: center;
+}
+
+.centered-message .alert {
+  margin: 0;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  font-size: 1.2rem;
+}
