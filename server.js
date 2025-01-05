@@ -42,7 +42,7 @@ app.post("/contact_me", (req, res) => {
       fs.writeFileSync(filePath, JSON.stringify(currentData, null, 2), "utf8");
       console.log("聯絡資訊已儲存:", newContact);
       res.status(200).json({ 
-        message: "欸恭喜終於成功！",
+        message: "欸恭喜終於成功",
         data: newContact 
       });
     } catch (error) {
