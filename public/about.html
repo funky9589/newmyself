@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>音樂幽浮</title>
@@ -13,7 +13,7 @@
     <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="web.html">
-          <img src="/img/logo-removebg.png" alt="音樂幽浮 Logo" class="logo-img me-2">
+          <img src="img/logo-removebg.png" alt="音樂幽浮 Logo" class="logo-img me-2">
           音樂幽浮的日文歌小天地
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,7 @@
     <!-- 主要內容區 -->
     <section class="about-section">
       <div class="about-content">
-        <img src="/img/logo-removebg.png" alt="關於我的圖片">
+        <img src="img/logo-removebg.png" alt="關於我的圖片">
         <div class="text">
           <h2>關於我</h2>
           <p>我是音樂幽浮，喜歡日文歌曲，致力於推廣 Jpop。<br>
@@ -48,30 +48,56 @@
       </div>
     </section>
 
-      <div class="text-center">
-        <h2>聯絡我</h2>
-        <p>如果有任何建議或問題，歡迎隨時與我聯繫！</p>
-        <div class="contact-icons">
-          <a href="https://www.instagram.com/funky_9589" target="_blank" class="text-primary fs-3" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="mailto:funky9589@gmail.com" class="text-danger fs-3" aria-label="Gmail">
-            <i class="fas fa-envelope"></i>
-          </a>
-        </div>
+    <div class="text-center">
+      <h2>聯絡我</h2>
+      <p>如果有任何建議或問題，歡迎隨時與我聯繫！</p>
+      <div class="contact-icons">
+        <a href="https://www.instagram.com/funky_9589" target="_blank" class="text-primary fs-3" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="mailto:funky9589@gmail.com" class="text-danger fs-3" aria-label="Gmail">
+          <i class="fas fa-envelope"></i>
+        </a>
       </div>
-      <form id="contactForm" class="contact-form mx-auto" method="POST" action="/api/contact">
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="輸入您的Email" required>
-        </div>
-        <div class="mb-3">
-          <label for="message" class="form-label">訊息</label>
-          <textarea class="form-control" id="message" name="message" rows="4" placeholder="輸入您的訊息" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">提交</button>
-      </form>
+      <div class="d-flex justify-content-center mt-4">
+        <form action="/contact_me" method="POST">
+          <input type="email" name="email" placeholder="請輸入電子郵件">
+          <textarea name="message" placeholder="請輸入訊息"></textarea>
+          <button type="submit">提交</button>
+        </form>
+      </div>
     </div>
+    
+    <script>
+      document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+        const submitButton = document.querySelector("button[type='submit']");
+        submitButton.disabled = true;
+    
+        fetch("contact_me", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, message }),
+        })
+          .then((response) => {
+            if (!response.ok) throw new Error("Network response was not ok " + response.statusText);
+            return response.json();
+          })
+          .then((data) => {
+            alert("提交成功：" + data.message);
+            document.getElementById("contactForm").reset();
+          })
+          .catch((error) => {
+            console.error("提交失敗：", error);
+            alert("提交失敗，請稍後再試。");
+          })
+          .finally(() => {
+            submitButton.disabled = false;
+          });
+      });
+    </script>
     <!-- Footer -->
     <footer class="footer-custom text-white text-center container-fluid mt-5">
       <div class="container py-4">
@@ -82,8 +108,8 @@
       </div>
     </footer>
 
-    <script src="/js/poopr.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="js/poopr.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

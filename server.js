@@ -1,39 +1,56 @@
 const express = require("express");
 const path = require("path");
-const fileUpload = require("express-fileupload");
+const fs = require("fs");
 
 const app = express();
 
 // 配置靜態資源
 app.use(express.static(path.join(__dirname, "public")));
 
-// 配置 Body Parser
+// 處理表單的東東
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+//contact_me
+const filePath = path.join(__dirname, "contact_me.json");
+if (!fs.existsSync(filePath)) {
+  fs.writeFileSync(filePath, "[]", "utf8");
+}
 
-// 配置文件上傳模組
-app.use(
-  fileUpload({
-    createParentPath: true, // 自動創建目錄
-  })
-);
-
-// 模擬資料庫操作
-const ContactDB = {
-  insert: (data) => {
-    console.log("Data saved to database:", data); // 模擬保存資料庫
-  },
-};
-
-// 聯絡表單處理
 app.post("/contact_me", (req, res) => {
-  if (req.body) {
-    ContactDB.insert(req.body);
-    res.status(200).json({ message: "Message received successfully!" });
+  const filePath = path.join(__dirname, "contact_me.json");
+
+  let currentData = [];
+  if (fs.existsSync(filePath)) {
+    try {
+      const fileContent = fs.readFileSync(filePath, "utf8");
+      currentData = fileContent ? JSON.parse(fileContent) : [];
+    } catch (error) {
+      console.error("讀取或解析 contact_me.json 時發生錯誤:", error);
+      currentData = [];
+    }
+  }
+
+  if (req.body && req.body.email && req.body.message) {
+    const newContact = {
+      email: req.body.email,
+      message: req.body.message,
+      timestamp: new Date().toISOString(),
+    };
+    currentData.push(newContact);
+
+    try {
+      fs.writeFileSync(filePath, JSON.stringify(currentData, null, 2), "utf8");
+      console.log("聯絡資訊已儲存:", newContact);
+      res.status(200).json({ message: "掐部掐掐死密達" });
+    } catch (error) {
+      console.error("寫入 contact_me.json 時發生錯誤:", error);
+      res.status(500).json({ error: "伺服器錯誤，無法儲存資料。" });
+    }
   } else {
-    res.status(400).json({ error: "Invalid request data." });
+    res.status(400).json({ error: "請提供有效的聯絡資訊。" });
   }
 });
+
 
 // 靜態頁面路由
 const routes = [
