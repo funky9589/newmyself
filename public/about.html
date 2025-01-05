@@ -97,6 +97,19 @@
             submitButton.disabled = false;
           });
       });
+      
+           fetch('/contact_me', {
+             method: 'POST',
+             headers: { 'Content-Type': 'application/json' },
+             body: JSON.stringify({ email: 'test@example.com', message: 'Hello!' })
+           })
+           .then(response => response.json())
+           .then(data => {
+             alert(`回應訊息: ${data.message}\n聯絡資訊:\nEmail: ${data.data.email}\n訊息: ${data.data.message}`);
+           })
+           .catch(error => console.error('錯誤:', error));
+
+
     </script>
     <!-- Footer -->
     <footer class="footer-custom text-white text-center container-fluid mt-5">

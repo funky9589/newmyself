@@ -44,7 +44,7 @@ a img:hover {
 }
 
 .navbar-custom .nav-link:hover {
-  text-decoration: underline; /* 滑鼠移過時加底線 */
+  text-decoration: none; 
   color: #ddd; /* 滑鼠移過文字顏色 */
 }
 
