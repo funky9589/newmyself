@@ -25,13 +25,12 @@
             <li class="nav-item"><a class="nav-link" href="news.html">日音消息<br><small>News</small></a></li>
             <li class="nav-item"><a class="nav-link" href="singer.html">歌手介紹<br><small>singer introduce</small></a></li>
             <li class="nav-item"><a class="nav-link" href="monthly.html">每月推薦歌單<br><small>month</small></a></li>
-            
           </ul>
         </div>
       </div>
     </nav>
-    
-    <!-- 主要內容區 -->
+
+    <!-- 關於內容 -->
     <section class="about-section">
       <div class="about-content">
         <img src="img/logo-removebg.png" alt="關於我的圖片">
@@ -48,85 +47,30 @@
       </div>
     </section>
 
-    <div class="text-center">
+    <!-- 聯絡表單 -->
+    <div id="app" class="contact-form-container">
       <h2>聯絡我</h2>
       <p>如果有任何建議或問題，歡迎隨時與我聯繫！</p>
-      <div class="contact-icons">
-        <a href="https://www.instagram.com/funky_9589" target="_blank" class="text-primary fs-3" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="mailto:funky9589@gmail.com" class="text-danger fs-3" aria-label="Gmail">
-          <i class="fas fa-envelope"></i>
-        </a>
+      <div class="form-group">
+        <input
+          type="email"
+          v-model="email"
+          placeholder="請輸入電子郵件"
+          required
+          class="form-control mb-3"
+        />
+        <textarea
+          v-model="message"
+          placeholder="請輸入訊息"
+          required
+          class="form-control mb-3"
+        ></textarea>
+        <button @click="submitForm" class="btn btn-primary btn-lg">提交</button>
       </div>
-      <div class="d-flex justify-content-center mt-4">
-        <form id="contactForm">
-          <input id="email" type="email" name="email" placeholder="請輸入電子郵件" required>
-          <textarea id="message" name="message" placeholder="請輸入訊息" required></textarea>
-          <button type="submit">提交</button>
-        </form>
-        
-        <div id="feedbackMessage" class="centered-message"></div>
-      </div>
-    
-    <script>
-      // 表單提交處理
-      document.getElementById("contactForm").addEventListener("submit", function (event) {
-  event.preventDefault(); // 阻止表單的預設提交行為
+      <div v-if="feedback" class="alert alert-info mt-3">{{ feedback }}</div>
+    </div>
 
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-  const feedbackMessage = document.getElementById("feedbackMessage");
-  const submitButton = document.querySelector("button[type='submit']");
-
-  // 清空回饋訊息
-  feedbackMessage.innerHTML = "";
-  feedbackMessage.style.display = "none";
-  submitButton.disabled = true; // 禁用按鈕避免重複提交
-
-  fetch("/contact_me", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, message }),
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("伺服器回應失敗: " + response.statusText);
-      }
-      return response.json();
-    })
-    .then((data) => {
-      // 顯示成功訊息
-      feedbackMessage.innerHTML = `
-        <div class="alert alert-success" role="alert">
-          提交成功！<br>
-          <strong>聯絡信箱：</strong> ${data.data.email}<br>
-          <strong>我們會盡快回復!!!</strong>
-        </div>`;
-      feedbackMessage.style.display = "block";
-      document.getElementById("contactForm").reset(); // 清空表單
-    })
-    .catch((error) => {
-      console.error("提交失敗：", error);
-      // 顯示失敗訊息
-      feedbackMessage.innerHTML = `
-        <div class="alert alert-danger" role="alert">
-          提交失敗，請稍後再試。
-        </div>`;
-      feedbackMessage.style.display = "block";
-    })
-    .finally(() => {
-      submitButton.disabled = false; // 恢復按鈕
-      
-      setTimeout(() => {
-        feedbackMessage.style.display = "none";
-      }, 2000);
-    });
-});
-
-    </script>
     <!-- Footer -->
-    <div id="feedbackMessage" class="floating-message"></div>
     <footer class="footer-custom text-white text-center container-fluid mt-5">
       <div class="container py-4">
         <h3>這裡是 Footer</h3>
@@ -136,8 +80,47 @@
       </div>
     </footer>
 
+    <!-- JavaScript -->
     <script src="js/poopr.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.3.4/dist/vue.global.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            email: "",
+            message: "",
+            feedback: "",
+          };
+        },
+        methods: {
+          submitForm() {
+            if (this.email && this.message) {
+              fetch("/contact_me", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email: this.email, message: this.message }),
+              })
+                .then((response) => {
+                  if (!response.ok) throw new Error("提交失敗");
+                  return response.json();
+                })
+                .then((data) => {
+                  this.feedback = `提交成功！我們會盡快回復！ (聯絡信箱: ${data.data.email})`;
+                  this.email = "";
+                  this.message = "";
+                })
+                .catch(() => {
+                  this.feedback = "提交失敗，請稍後再試。";
+                });
+            } else {
+              this.feedback = "請填寫所有欄位！";
+            }
+          },
+        },
+      });
+      app.mount("#app");
+    </script>
   </body>
 </html>

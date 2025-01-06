@@ -1,15 +1,16 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
-
+const cors = require("cors");
 const app = express();
 
-// 配置靜態資源
+// 配置靜態資源目錄
 app.use(express.static(path.join(__dirname, "public")));
 
 // 處理表單的中介軟體
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 // contact_me.json 檢查與初始化
 const filePath = path.join(__dirname, "contact_me.json");
@@ -55,18 +56,9 @@ app.post("/contact_me", (req, res) => {
   }
 });
 
-// 靜態頁面路由
-const routes = [
-  { path: "/", file: "web.html" },
-  { path: "/monthly.html", file: "html/monthly.html" },
-  { path: "/singer", file: "html/singer.html" },
-  { path: "/about", file: "html/about.html" },
-];
-
-routes.forEach(({ path: route, file }) => {
-  app.get(route, (req, res) => {
-    res.sendFile(path.join(__dirname, "public", file));
-  });
+// 設定 web.html 為預設首頁
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "web.html"));
 });
 
 // 404 的頁面處理
