@@ -61,6 +61,17 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "web.html"));
 });
 
+// 測試圖片端點（新增部分）
+app.get("/test-image/:imageName", (req, res) => {
+  const imageName = req.params.imageName;
+  const imagePath = path.join(__dirname, "public", "img", imageName);
+  if (fs.existsSync(imagePath)) {
+    res.sendFile(imagePath);
+  } else {
+    res.status(404).json({ error: "圖片未找到" });
+  }
+});
+
 // 404 的頁面處理
 app.use((req, res) => {
   res.status(404).sendFile(path.join(__dirname, "public", "404.html"));
